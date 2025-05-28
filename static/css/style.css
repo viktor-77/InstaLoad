@@ -1,0 +1,11 @@
+.gradient-bg {
+    background: linear-gradient(to right, #315EE4, #DD4754);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #8D47AB, #DC4C75);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* для підтримки в Firefox */
+  color: transparent;
+}

@@ -1,0 +1,246 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  {# Encoding #}
+  <meta charset="utf-8">
+
+  {# Title #}
+  <title>InstaLoad</title>
+
+  <!-- Bootstrap 5 & Icons CDN -->
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet">
+
+  <!-- static css -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="medium-grey">
+
+{# Header #}
+<header>
+  <nav class="navbar">
+    <div class="container p-3">
+      <a class="navbar-brand fw-bold gradient-text"
+         href="{% url "insta_loader:video" %}">
+        <i class="bi bi-instagram"></i>
+        InstaLoad
+      </a>
+      <a href="#footer" class="text-reset text-decoration-none">
+        <span class="fw-bold">FAQ</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main class="gradient-bg">
+  <!-- Content type swithcer -->
+  <div class="container text-center p-5">
+    <div
+        class="text-light d-inline-block rounded rounded-3 p-3 d-flex w-50 justify-content-between m-auto align-items-center">
+      <div
+          {% if request.path == "/" %}class="p-2 rounded"
+          style="background-color: rgba(0,0,0,.5); "{% endif %}>
+        <a href="{% url "insta_loader:video" %}"
+           class="text-reset text-decoration-none">
+          <i class="bi bi-file-play me-2"></i>
+          video
+        </a>
+      </div>
+
+      <div {% if 'photo' in request.path %}class="p-2 rounded"
+           style="background-color: rgba(0,0,0,.5); "{% endif %}>
+        <a href="{% url "insta_loader:photo" %}"
+           class="text-reset text-decoration-none">
+          <i class="bi bi-file-image"></i>
+          Photo
+        </a>
+      </div>
+
+      <div {% if 'story' in request.path %}class="p-2 rounded"
+           style="background-color: rgba(0,0,0,.5); "{% endif %}>
+        <a href="{% url "insta_loader:story" %}"
+           class="text-reset text-decoration-none">
+          <i class="bi bi-clock-history"></i>
+          Story
+        </a>
+      </div>
+
+      <div {% if 'reels' in request.path %}class="p-2 rounded"
+           style="background-color: rgba(0,0,0,.5); "{% endif %}>
+        <a href="{% url "insta_loader:reels" %}"
+           class="text-reset text-decoration-none">
+          <i class="bi bi-camera-reels"></i>
+          Reels
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="container text-center mt-4 text-light">
+    <h1 class="p-3">
+      Завантаження Instagram Video
+    </h1>
+    <h4>Скачуй Video та Reels з інстаграму</h4>
+  </div>
+
+  <!-- Form -->
+  <div class="text-center m-5">
+    <form action="" method="POST" class="d-flex justify-content-center gap-2">
+      {% csrf_token %}
+      <input type="text" name="instagram_url" class="w-25 form-control"
+             placeholder="Insert link here">
+      <button class="btn btn-secondary">Paste</button>
+      <input type="submit" value="Download" class="btn btn-primary">
+    </form>
+  </div>
+
+  <!-- Content  -->
+  {% block content %}{% endblock %}
+
+  <!-- Story  Video  Reels  -->
+  <div class="container">
+    <div class="mx-auto" style="max-width:800px;">
+      <div class="row row-cols-1 row-cols-md-2 g-3">
+
+        <!-- Photo Downloader -->
+        <div class="col">
+          <div
+              class="d-flex align-items-start bg-light text-muted rounded p-3 h-100">
+            <i class="bi bi-file-image pe-3 fs-3 gradient-text"></i>
+            <div>
+              <h6 class="fw-semibold mb-1">Photo Downloader</h6>
+              <small>Якщо ви шукаєте спосіб зберігати зображення з публікацій в
+                Instagram, InstaLoad дозволяє завантажувати окремі зображення
+                або повні каруселі.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Downloader -->
+        <div class="col">
+          <div
+              class="d-flex align-items-start bg-light text-muted rounded p-3 h-100">
+            <i class="bi bi-clock-history pe-3 fs-3 gradient-text"></i>
+            <div>
+              <h6 class="fw-semibold mb-1">Story Downloader</h6>
+              <small>Зберігайте, переглядайте та використовуйте історії
+                повторно навіть через 24 години — додаток не потрібен!</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Downloader -->
+        <div class="col">
+          <div
+              class="d-flex align-items-start bg-light text-muted rounded p-3 h-100">
+            <i class="bi bi-file-play pe-3 fs-3 gradient-text"></i>
+            <div>
+              <h6 class="fw-semibold mb-1">Video Downloader</h6>
+              <small>Завантажуйте одне або кілька відео з каруселей Instagram
+                за лічені секунди.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reels Downloader -->
+        <div class="col">
+          <div
+              class="d-flex align-items-start bg-light text-muted rounded p-3 h-100">
+            <i class="bi bi-camera-reels pe-3 fs-3 gradient-text"></i>
+            <div>
+              <h6 class="fw-semibold mb-1">Reels Downloader</h6>
+              <small>Хапайте свої улюблені ролики та дивіться їх будь-коли за
+                допомогою InstaLoad.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW-TO STEPS -->
+  <div class="container mt-5 text-light p-5">
+    <h2 class="text-center mb-5 fw-bold">How to download reels
+      from Instagram?
+    </h2>
+
+    <!-- Step 1 -->
+    <div class="d-flex mb-5 ms-5">
+      <div>
+        <div class="d-flex align-items-center mb-2">
+          <span class="badge bg-danger rounded-circle me-3"
+                style="width:30px; height:30px;">1</span>
+          <h5 class="mb-0 fw-semibold">Copy the URL</h5>
+        </div>
+        <p>
+          First, open the Instagram Reels video you wish to download. Tap the
+          <strong>•••</strong> icon and choose <em>Copy Link</em>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="d-flex mb-5 ms-5">
+      <div>
+        <div class="d-flex align-items-center mb-2">
+          <span class="badge bg-danger rounded-circle me-3"
+                style="width:30px; height:30px;">2</span>
+          <h5 class="mb-0 fw-semibold">Paste the link</h5>
+        </div>
+        <p>
+          Go to <strong>InstaLoad</strong>, paste the link into the field, then
+          click the <em>Download</em> button.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="d-flex ms-5">
+      <div>
+        <div class="d-flex align-items-center mb-2">
+          <span class="badge bg-danger rounded-circle me-3"
+                style="width:30px; height:30px;">3</span>
+          <h5 class="mb-0 fw-semibold">Paste the link</h5>
+        </div>
+        <p>
+          Go to <strong>InstaLoad</strong>, paste the link into the field, then
+          click the <em>Download</em> button.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Styles  -->
+  <style>
+      .step-dot-left {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #ffffff; /* white */
+          margin-top: 0.35rem; /* aligns with text */
+      }
+  </style>
+</main>
+
+{# Footer #}
+<footer id="footer" class="dark-grey p-4">
+  <div class="container d-flex justify-content-center align-items-center">
+    &copy; 2025 Viktor Umanskiy
+  </div>
+</footer>
+
+{# Botstrap js #}
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

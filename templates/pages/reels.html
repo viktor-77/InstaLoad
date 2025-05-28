@@ -1,0 +1,21 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+
+  <div class="container my-5">
+    {% if video_url %}
+      <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+        <video class="w-100 h-100" controls>
+          <source src="{{ video_url }}" type="video/mp4">
+          Ваш браузер не підтримує тег <code>&lt;video&gt;</code>.
+        </video>
+      </div>
+
+    {% elif error %}
+      <div class="alert alert-danger text-center" role="alert">
+        {{ error }}
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}
