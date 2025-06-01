@@ -24,7 +24,11 @@ SECRET_KEY = 'django-insecure-3llt!p29e%4g@2qle(qhrkcddy5(3*!-==dcjky)om(302-rub
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "instaload-sl70.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
