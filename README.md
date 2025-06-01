@@ -42,3 +42,8 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 # Перейти на http://127.0.0.1:8000/
+
+
+🚀 Запуск render.com
+
+https://instaload-sl70.onrender.com/
