@@ -18,9 +18,7 @@
 
 ## 🖼️ Інтерфейс
 
-<div align="center">
-  <img src="docs/screenshot_home.png" width="700" alt="Головна сторінка">
-</div>
+![img.png](img.png)
 
 ---
 
