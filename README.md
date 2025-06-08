@@ -6,7 +6,7 @@
 
 ## Main features
 
-| Функція | Опис |
+| Feature | Description |
 |---------|-------|
 | **Video Downloader** | Download one or more videos from carousels. |
 | **Photo Downloader** | Save individual photos or entire carousels. |
@@ -16,34 +16,61 @@
 
 ---
 
-## Інтерфейс
+## Interface
 
 ![img.png](img.png)
 
 ---
 
-## 🔧 Технології
+## ⚙️ Setup:
 
+1. **Clone & open the repository:**
+   ```bash
+   git clone https://github.com/your-username/note-plus-plus.git
+   cd note-plus-plus
+   ```
+
+2. **Create a virtual environment:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux / Mac
+   venv\Scripts\activate     # Windows
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install django
+   ```
+
+4. **Apply database migrations:**
+   ```bash
+   python manage.py migrate
+   ```
+
+5. **Create superuser (optional):**
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+6. **Run server:**
+   ```bash
+   python manage.py runserver
+   ```
+
+7. **Перейти в браузері:**
+   ```
+   http://127.0.0.1:8000/
+   ```
+##  Demo
+
+[https://notepad-zzv5.onrender.com](https://instaload-sl70.onrender.com)
+
+
+##  Technology stack:
 - **Python 3.11**, **Django 5.2**
-- **Gunicorn** — WSGI-сервер
-- **Whitenoise** — обслуговування статики
+- **Gunicorn** — WSGI-server
+- **Whitenoise** — statics support
 - **Bootstrap 5** & **Bootstrap Icons**
-- **Requests** — звернення до RapidAPI-ендпоінтів Instagram
-
+- **Requests** — accessing Instagram RapidAPI endpoints
 ---
 
-## 🚀 Запуск локально
-
-```bash
-git clone https://github.com/viktor-77/InstaLoad.git
-cd InstaLoad
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-# Перейти на http://127.0.0.1:8000/
-
-
-🚀 Запуск render.com
-
-https://instaload-sl70.onrender.com/
