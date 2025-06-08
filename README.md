@@ -1,22 +1,22 @@
 # InstaLoad
 
-> **InstaLoad** — міні-сервіс для швидкого завантаження відео, фото, Reels та Story з Instagram у два кліки. Побудований на Django 5 та Bootstrap 5. Легко розгортається на Render.com без окремого web-сервера — статичні файли обслуговує Whitenoise.
+> **InstaLoad** — A mini-service for quickly downloading videos, photos, Reels and Stories from Instagram in two clicks. Built on Django 5 and Bootstrap 5. Easily deployed on Render.com without a separate web server — static files are served by Whitenoise.
 
 ---
 
-## 📸 Основні можливості
+## Main features
 
 | Функція | Опис |
 |---------|-------|
-| **Video Downloader** | Завантаження одного чи декількох відео з каруселей. |
-| **Photo Downloader** | Збереження окремих фото або цілих каруселей. |
-| **Reels Downloader** | Отримання будь-яких Reels за посиланням. |
-| **Story Downloader** | Збереження Story навіть після 24 годин. |
-| **FAQ-секція**       | Тримай курсор на «FAQ» у навігації — швидкі відповіді. |
+| **Video Downloader** | Download one or more videos from carousels. |
+| **Photo Downloader** | Save individual photos or entire carousels. |
+| **Reels Downloader** | Get any Reels via the link. |
+| **Story Downloader** | Saving Story even after 24 hours. |
+| **FAQ-секція**       | Hover over "FAQ" in the navigation for quick answers.|
 
 ---
 
-## 🖼️ Інтерфейс
+## Інтерфейс
 
 ![img.png](img.png)
 
