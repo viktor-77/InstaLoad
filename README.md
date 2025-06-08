@@ -2,7 +2,6 @@
 
 > **InstaLoad** — A mini-service for quickly downloading videos, photos, Reels and Stories from Instagram in two clicks. Built on Django 5 and Bootstrap 5. Easily deployed on Render.com without a separate web server — static files are served by Whitenoise.
 
----
 
 ## Main features
 
@@ -65,12 +64,10 @@
 
 https://instaload-sl70.onrender.com
 
-
 ##  Technology stack:
 - **Python 3.11**, **Django 5.2**
 - **Gunicorn** — WSGI-server
 - **Whitenoise** — statics support
 - **Bootstrap 5** & **Bootstrap Icons**
 - **Requests** — accessing Instagram RapidAPI endpoints
----
 
