@@ -3,7 +3,7 @@
 {% block content %}
 
   {% if video_url %}
-    <div class="container mt-5">
+    <div class="container my-5">
       <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
         <video class="w-100 h-100" controls>
           <source src="{{ video_url }}" type="video/mp4">
@@ -11,14 +11,18 @@
         </video>
       </div>
     </div>
-  {% endif %}
 
-  {% if photo_url %}
+  {% elif photo_url %}
     <div class="container mt-5 text-center">
-    <div class="">
-      <img src="{{ photo_url }}" alt="Selected photo"/>
+      <div class="alert alert-danger text-center" role="alert">
+        Only video stories allowed !!!
+      </div>
+    </div>
+
+  {% elif error %}
+    <div class="alert alert-danger text-center" role="alert">
+      {{ error }}
     </div>
   {% endif %}
-</div>
 
 {% endblock %}

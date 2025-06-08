@@ -113,17 +113,15 @@ class StoryView(View, JsonResponseDataMixin):
         )
 
     def post(self, request: HttpRequest) -> HttpResponse:
-        data = self.get_response_data(request)
+        data = self.get_response_data(request)["result"][0]
 
         video_url = None
         photo_url = None
 
-        if data["result"][0].get('video_versions'):
-            video_url = data["result"][0]['video_versions'][0]["url"]
+        if data.get('video_versions'):
+            video_url = data['video_versions'][0]["url"]
         else:
-            photo_url = \
-                data["result"][0]["image_versions2"]['candidates'][1][
-                    "url"]
+            photo_url = data["image_versions2"]['candidates'][1]["url"]
 
         return render(
             request, "pages/story.html", {
